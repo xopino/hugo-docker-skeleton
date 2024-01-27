@@ -17,7 +17,7 @@ init:
 # Run the Docker container with a health check
 run:
 	docker run --name $(CONTAINER_NAME) -d -p $(HOST_PORT):$(CONTAINER_PORT) -v "$$PWD:/src" -it $(IMAGE_NAME) server
-	@echo "Waiting for Jekyll server to start..."
+	@echo "Waiting for Hugo server to start..."
 	@until curl -s http://localhost:$(HOST_PORT) > /dev/null; do \
 	    echo -n "."; \
 	    sleep 1; \
